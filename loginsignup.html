@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HaanJee</title>
+  <link rel="icon" href="Images/logo.jpg" type="image/x-icon" />
+  <link rel="shortcut icon" href="Images/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="Style/Haanjee.css">
+  <link rel="stylesheet" href="Style/Navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    .login {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 85vh;
+      margin: 0;
+    }
+
+    .auth-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+
+    }
+
+    .form-toggle {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .form-toggle button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      padding: 10px;
+      cursor: pointer;
+      color: #555;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .form-toggle button.active {
+      color: #ff7e5f;
+      font-weight: bold;
+    }
+
+    .auth-form {
+      display: none;
+    }
+
+    .auth-form h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ff7e5f;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #f0f0f0;
+      font-size: 1rem;
+    }
+
+    .auth-form button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #ff7e5f;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .auth-form button:hover {
+      background: #feb47b;
+    }
+
+    .auth-form p {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .auth-form p a {
+      color: #ff7e5f;
+      text-decoration: none;
+    }
+
+    .login-form {
+      display: block;
+    }
+
+    @media(max-width: 991px) {
+      .auth-container {
+        padding: 10px 10px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+    }
+
+    @media(min-width: 992px) {
+      .auth-container {
+        padding: 10px 10px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      #menu-login {
+        margin-right: 250px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar Open -->
+  <!-- <header class="navbar" id="navbar">
+        <div class="container" id="container">
+            <div class="logo" id="logo">
+                <a href="Haanjee.html"><img src="Images/logo.jpg" class="logo" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+              <li><a href="Haanjee.html#home" class="nav-option">Home</a></li>
+                <li><a href="Haanjee.html#about" class="nav-option">About Us</a></li>
+                <li><a href="haanjee.html#mission" class="nav-option">Mission&Vision</a></li>
+                <li class="dropdown">
+                    <a href="haanjee.html#services" class="dropbtn nav-option">Services</a>
+                    <div class="dropdown-content">
+                      <a href="Services/Political.html" class="nav-option" data-content="Service 1">
+                          <i class="fa-solid fa-handshake"></i>Political Consultancy</a>
+                      <a href="Services/Gaurd.html" class="nav-option" data-content="Service 2">
+                          <i class="fa-solid fa-person-rifle"></i>Security Guard</a>
+                      <a href="Services/AMC.html" class="nav-option" data-content="Service 3">
+                          <i class="fa-solid fa-building"></i> AMCs</a>
+                      <a href="Services/Parttime.html" class="nav-option" data-content="Service 4">
+                          <i class="fa-solid fa-person-chalkboard"></i>Part Time Job</a>
+                      <a href="Services/Digital.html" class="nav-option" data-content="Service 5">
+                          <i class="fas fa-chart-line"></i>Digital Marketing</a>
+                      <a href="Services/Web.html" class="nav-option" data-content="Service 6">
+                          <i class="fas fa-code"></i>Web Development</a>
+                      <a href="Services/Manpower.html" class="nav-option" data-content="Service 7">
+                          <i class="fas fa-robot"></i>Man Power IT/Non</a>
+                      <a href="Services/Franchise.html" class="nav-option" data-content="Service 8">
+                          <i class="fas fa-network-wired"></i>Franchise Business Model</a>
+                      <a href="Services/ITinfra.html" class="nav-option" data-content="service 9">
+                          <i class="fas fa-network-wired"></i>IT-Infra.
+                      </a>
+                      <a href="Services/Server.html" class="nav-option" data-content="service 9">
+                          <i class="fas fa-server"></i>Server Management
+                      </a>
+                  </div>
+                </li>
+                <li><a href="haanjee.html#contact" class="nav-option">Contact Us</a></li>
+                 
+            </ul>
+
+            <div class="burger" id="menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+
+
+            </div>
+        </div>
+    </header> -->
+  <!-- Navbar Close -->
+
+
+  <!-- header start -->
+  <header class="header">
+    <div class="container">
+      <div class="header-main">
+        <div class="logo">
+          <a href="Haanjee.html"><img src="/Images/logo.jpg" alt="Logo"></a>
+        </div>
+        <div class="open-nav-menu">
+          <span></span>
+        </div>
+        <div class="menu-overlay">
+        </div>
+        <!-- navigation menu start -->
+        <nav class="nav-menu">
+          <div class="close-nav-menu">
+            <img src="Images/close.svg" alt="close">
+          </div>
+          <ul class="menu" id="menu-login">
+            <!--               
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Home <i class="plus"></i></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="#">Home 1</a></li>
+                      <li class="menu-item"><a href="#">Home 2</a></li>
+                      <li class="menu-item"><a href="#">Home 3</a></li>
+                      <li class="menu-item"><a href="#">Home 4</a></li>
+                  </ul>
+               </li> -->
+            <li class="menu-item">
+              <a href="Haanjee.html">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="Haanjee.html#about">About</a>
+            </li>
+            <li class="menu-item">
+              <a href="Haanjee.html#mission">Mission & Vision</a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+              <a href="Haanjee.html#services" data-toggle="sub-menu">services<i class="plus"></i></a>
+              <ul class="sub-menu">
+                <li class="menu-item"><a href="Services/Web.html">Web Development</a></li>
+                <li class="menu-item"><a href="Services/Guard.html">Security Guard</a></li>
+                <li class="menu-item"><a href="Services/Political.html">Political Consultancy</a></li>
+                <li class="menu-item"><a href="Services/AMC.html">AMC</a></li>
+                <li class="menu-item"><a href="Services/Server.html">Server Management</a></li>
+                <li class="menu-item"><a href="Services/ITinfra.html">IT infrastructure</a></li>
+                <li class="menu-item"><a href="Services/Manpower.html">Man Power IT/NON</a></li>
+                <li class="menu-item"><a href="Services/Parttime.html">Part Time Jobs</a></li>
+                <li class="menu-item"><a href="Services/Digital.html">Digital Marketing</a></li>
+                <li class="menu-item"><a href="Services/Franchise.html">Franchise Business Model</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="Haanjee.html#contact">Contact Us</a>
+            </li>
+            <!-- <li class="menu-item" id="login">
+                  <a href=" "> </a>
+               </li> -->
+          </ul>
+        </nav>
+        <!-- navigation menu end -->
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+  <section class="login">
+    <div class="auth-container">
+      <div class="form-toggle">
+        <button class="toggle-login active">Login</button>
+        <button class="toggle-signup">Sign Up</button>
+      </div>
+
+      <div class="auth-form login-form">
+        <h2>Login</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <p>Forgot your password? <a href="#">Click here</a></p>
+        </form>
+      </div>
+
+      <div class="auth-form signup-form" style="display: none">
+        <h2>Sign Up</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    document
+      .querySelector(".toggle-login")
+      .addEventListener("click", function () {
+        document.querySelector(".login-form").style.display = "block";
+        document.querySelector(".signup-form").style.display = "none";
+        this.classList.add("active");
+        document.querySelector(".toggle-signup").classList.remove("active");
+      });
+
+    document
+      .querySelector(".toggle-signup")
+      .addEventListener("click", function () {
+        document.querySelector(".login-form").style.display = "none";
+        document.querySelector(".signup-form").style.display = "block";
+        this.classList.add("active");
+        document.querySelector(".toggle-login").classList.remove("active");
+      });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const burger = document.getElementById("menu"); // Burger menu element
+      const navLinks = document.querySelector(".nav-links"); // Navigation links container
+      const navOptionLinks = document.querySelectorAll(".nav-links li a"); // Individual nav links
+      //   const enquiry = document.querySelector(".enquiry");
+      //   const formIcon = document.querySelector(".form-icon");
+      //   const closeIcon = document.getElementById("closeEnquiry");
+
+      // Open the enquiry form by default on page load
+      //   enquiry.classList.add("active");
+
+      // Toggle the enquiry form when the pencil icon is clicked
+      //   formIcon.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     enquiry.classList.toggle("active");
+      //   });
+
+      // Close the enquiry form when the close icon is clicked
+      //   closeIcon.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     enquiry.classList.remove("active");
+      //   });
+
+      // Toggle burger and navigation menu on click
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        burger.classList.toggle("toggle");
+      });
+
+      // Close hamburger menu when a nav link is clicked
+      navOptionLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active"); // Close menu
+          burger.classList.remove("toggle"); // Reset burger icon
+        });
+      });
+    });
+
+
+
+  </script>
+  <script src="Script/Haanjee.js"></script>
+  <script src="Script/Navbar.js"></script>
+</body>
+
+</html>
