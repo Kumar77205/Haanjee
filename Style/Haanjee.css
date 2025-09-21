@@ -290,7 +290,7 @@ body {
 }
 
 .about-text h2 {
-  font-size: 36px;
+  font-size: 2rem;
   color: #333;
   /* Dark Gray */
   margin-bottom: 20px;
@@ -298,7 +298,7 @@ body {
 }
 
 .about-text p {
-  font-size: 22px;
+  font-size: 1.2rem;
   color: #555;
   /* Medium Gray */
   line-height: 1.6;
@@ -363,7 +363,7 @@ body {
 }
 
 .mission-content p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #555;
   line-height: 1.8;
   margin-bottom: 40px;
